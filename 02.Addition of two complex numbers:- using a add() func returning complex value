@@ -1,0 +1,63 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+using namespace std;
+class complex
+{
+    private:
+             int real;
+             int imag;
+    public:
+          //default constructor//
+           complex()
+           {
+               real=0;
+               imag=0;
+           }
+         // parametric constrctor//
+         complex (int x, int y)
+         {
+            real=x;
+            imag=y;
+         }
+         complex(int a)
+         {
+             real=imag=a;
+         }
+        void displaydata()
+        {
+            if(imag>0)
+            cout<<real<<"+"<<imag<<"i"<<endl;
+            else
+            cout<<real<<imag<<"i"<<endl;
+        
+        }
+          complex add(complex x)
+        {
+            complex z;
+          z.real=x.real+real;
+          z.imag=x.imag+imag;
+            
+        cout<<"Addition is :"<<endl;
+         return z;
+        }
+    
+    
+};
+
+int main()
+{
+  complex c1(30),c2(3,4),c3;
+  c1.displaydata();
+  c2.displaydata();
+  c3=c1.add(c2);
+  c3.displaydata();
+    return 0;
+}
+
