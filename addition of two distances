@@ -1,0 +1,55 @@
+
+#include <iostream>
+
+using namespace std;
+class cgs;
+class SI
+{ 
+    private: 
+               int km,m;
+    public: 
+            void setdata(int x, int y)
+            {
+                km=x;
+                m=y;
+            }
+     friend void add(SI t1, cgs t2);
+     friend  void display();
+    
+};
+class cgs
+{
+     private: 
+               int feet;
+              float inches;
+    public: 
+            void setdata(int x, int y)
+            {
+                feet=x;
+                inches=y;
+            }
+    friend void add(SI t1, cgs t2);
+    
+    
+};
+ void add(SI t1, cgs t2)
+ {
+     int m;
+     m=((t2.feet*0.3)+(t2.inches*0.0254));   //inch and feet are converted to m//
+     t1.m=t1.m+m;
+     cout<<"\n "<<t1.km<<" km and "<<t1.m<<" mtr";
+ }
+
+
+int main()
+{
+    SI s;
+    cgs c;
+    s.setdata(10,20);
+    c.setdata(20,10);
+    add(s,c);
+
+
+    return 0;
+}
+
